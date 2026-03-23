@@ -1,0 +1,6 @@
+[submodule "customer-service"]
+	path = customer-service
+	url = https://github.com/dbhagya200/LogisticMng-Project-Service-Customer.git
+[submodule "order-service"]
+	path = order-service
+	url = https://github.com/dbhagya200/LogisticMng-Project-Service-JobOrder.git
