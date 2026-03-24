@@ -2,22 +2,18 @@ module.exports = {
   apps : [
       {
           name:"cloud-sql-auth-proxy",
-          script: "./cloud-sql-proxy",
-          args: ["logistic-management-490810:asia-southeast1:db-customer-logistic", "--private-ip"],
-          interpreter: "none",
+          script: "./cloud-sql-proxy logistic-management-490810:asia-southeast1:db-customer-logistic --private-ip",
           log_file: "./logs/cloud-sql-auth-proxy.log"
       },
       {
           name   : "customer-service",
-          script : "java",
-          args: ["-jar", "./customer-service/target/Customer-Service-1.0.0.jar"],
+          script : "java -jar ./customer-service/target/Customer-Service-1.0.0.jar ",
           log_file: "./logs/customer-service.log",
           instances : 2
       },
       {
           name   : "order-service",
-          script : "java",
-          args: ["-jar", "./order-service/target/Order-Service-1.0.0.jar"],
+          script : "java -jar ./order-service/target/Order-Service-1.0.0.jar ",
           log_file: "./logs/order-service.log",
           instances : 2
       }
